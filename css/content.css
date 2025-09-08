@@ -33,17 +33,13 @@ h1
 {
     box-shadow: 1px 6px 3px 0 rgb(185, 185, 185);
 }
-#containerClothing img
-{
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-#containerAccessories img
-{
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+#containerClothing img,
+#containerAccessories img {
+    width: 80%;   
+    height: auto;
+    margin: 15px auto 10px auto;
+    display: block;
+    border-radius: 10px 10px 0 0;
 }
 #details
 {
