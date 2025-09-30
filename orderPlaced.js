@@ -1,38 +1,56 @@
-// Simpan orderId & counter di cookie (dummy)
-document.cookie = "orderId=" + 0 + ",counter=" + 0;
+console.clear();
 
-let httpRequest = new XMLHttpRequest(),
-    method = "GET",
-    jsonRequestURL = "https://fakestoreapi.com/carts";
+// Ambil cookie orderId (misal: "orderId=1 2,counter=2")
+let cookie = document.cookie;
+let orderCookie = cookie.split(",")[0].split("=")[1]; 
+let orderIds = orderCookie.trim().split(" ").map(Number);
 
-// GET data dulu
-httpRequest.open(method, jsonRequestURL, true);
-httpRequest.onreadystatechange = function () {
-    if (httpRequest.readyState == 4 && httpRequest.status == 200) {
-        // convert JSON jadi JS object
-        let jsonArray = JSON.parse(httpRequest.responseText);
-        console.log("GET carts:", jsonArray);
+// Ambil data produk dari array products (yang sama kayak di content.js)
+const products = [
+  {
+    id: 1,
+    title: "Sweater Rajut Oversize Pria Garis Coklat Putih",
+    category: "Pakaian Pria",
+    price: 329000,
+    image: "img/sweaterboy.jpg",
+  },
+  {
+    id: 2,
+    title: "Sweater Garis Wanita Casual Oversize",
+    category: "Pakaian Wanita",
+    price: 289000,
+    image: "img/sweatergirl.jpg",
+  },
+  {
+    id: 3,
+    title: "Jaket Kulit Sintetis Crop Wanita Hitam",
+    category: "Pakaian Wanita",
+    price: 499000,
+    image: "img/jacketgirl.jpg",
+  }
+];
 
-        // bikin order dummy baru
-        let newOrder = {
-            userId: 1,
-            date: new Date().toISOString().split("T")[0], // format YYYY-MM-DD
-            products: [
-                { productId: 1, quantity: 2 },
-                { productId: 2, quantity: 1 }
-            ]
-        };
+// Filter produk yang ada di cookie
+let orderedProducts = products.filter(p => orderIds.includes(p.id));
 
-        // kirim order pakai POST
-        let postRequest = new XMLHttpRequest();
-        postRequest.open("POST", "https://fakestoreapi.com/carts", true);
-        postRequest.setRequestHeader("Content-Type", "application/json");
-        postRequest.onreadystatechange = function () {
-            if (postRequest.readyState == 4 && postRequest.status == 200) {
-                console.log("Order baru berhasil dikirim:", JSON.parse(postRequest.responseText));
-            }
-        };
-        postRequest.send(JSON.stringify(newOrder));
-    }
-};
-httpRequest.send(null);
+// Render list order di halaman Order Placed
+let orderContainer = document.getElementById("orderContainer");
+
+let listDiv = document.createElement("div");
+listDiv.id = "orderedList";
+
+let ul = document.createElement("ul");
+orderedProducts.forEach(p => {
+  let li = document.createElement("li");
+  li.textContent = `${p.title} - ${p.price.toLocaleString("id-ID", {
+    style: "currency",
+    currency: "IDR"
+  })}`;
+  ul.appendChild(li);
+});
+
+listDiv.appendChild(ul);
+orderContainer.appendChild(listDiv);
+
+// Reset cart setelah order
+document.cookie = "orderId=,counter=0";

@@ -1,0 +1,73 @@
+.hero {
+    height: 80vh; /* full screen */
+    background: url("../img/landingpage.png") no-repeat center center/cover;
+    position: relative;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.5); /* gelap transparan */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #f1f1f1;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-inline: 60px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-hero {
+    padding: 12px 28px;
+    background-color: #ffffff;
+    color: #000;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.btn-alt {
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+}
+
+.btn-alt:hover {
+    background-color: #fff;
+    color: #000;
+}
