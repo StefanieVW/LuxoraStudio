@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+  <title> ABOUT & CONTACT | Luxora </title>
+
+  <!-- favicon -->
+  <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+
+  <!-- fonts & icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4a3b1f73a2.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- page css -->
+  <link rel="stylesheet" href="css/aboutus.css">
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <div id="1"></div>
+  <script>
+    (function loadHeader(){
+      var r = new XMLHttpRequest();
+      r.open("GET", "header.html", false);
+      r.send(null);
+      document.getElementById(1).innerHTML = r.responseText;
+    })();
+  </script>
+
+  <main class="page">
+    <!-- ================= HERO ================= -->
+    <section class="hero container">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <h1>Luxora</h1>
+      <p>Koleksi fashion esensial dengan rasa premium — nyaman dipakai, enak dipandang, dan ramah di kulit.</p>
+      <div class="hero__chips">
+        <span class="chip"><i class="fas fa-gem"></i> Premium Quality</span>
+        <span class="chip"><i class="fas fa-leaf"></i> Eco-Conscious</span>
+        <span class="chip"><i class="fas fa-shipping-fast"></i> Fast Delivery</span>
+        <span class="chip"><i class="fas fa-undo"></i> 14-Day Return</span>
+      </div>
+    </section>
+
+    <!-- ================= ABOUT (CARDS) ================= -->
+    <section class="about container">
+      <header class="section-head">
+        <h2>About Us</h2>
+        <p>Filosofi kami sederhana: <em>timeless style</em> bertemu <em>modern craftsmanship</em>. Kami merancang item yang mudah dipadupadankan, tahan lama, dan priced-fair.</p>
+      </header>
+
+      <div class="grid-3">
+        <article class="card hover-raise">
+          <i class="fa-solid fa-scissors"></i>
+          <h3>Crafted for Comfort</h3>
+          <p>Pattern disesuaikan body type Asia, jahitan rapat, soft-touch fabric agar nyaman dipakai harian.</p>
+        </article>
+
+        <article class="card hover-raise">
+          <i class="fas fa-balance-scale"></i>
+          <h3>Honest Pricing</h3>
+          <p>Rantai distribusi efisien tanpa middleman berlapis — supaya kualitas premium tetap terjangkau.</p>
+        </article>
+
+        <article class="card hover-raise">
+          <i class="fas fa-seedling"></i>
+          <h3>Responsible Materials</h3>
+          <p>Mengutamakan katun tersertifikasi & kemasan minim limbah. Produksi diaudit berkala.</p>
+        </article>
+      </div>
+
+      <div class="about-banner">
+        <div class="about-banner__text">
+          <h3>Built to mix & match.</h3>
+          <p>Dari weekdays ke weekend, satu palet warna untuk banyak gaya.</p>
+          <a href="/shop.html" class="btn btn-primary">Shop Now</a>
+        </div>
+        <figure class="about-banner__img" aria-hidden="true"></figure>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="contact container">
+      <header class="section-head">
+        <h2>Contact Us</h2>
+        <p>Punya pertanyaan, kolaborasi, atau butuh bantuan pesanan? Kirim pesan kapan saja.</p>
+      </header>
+
+      <div class="contact__wrap">
+        <!-- left: form -->
+        <form class="form card glass" onsubmit="event.preventDefault(); this.classList.add('sent'); alert('Thanks! We received your message.');">
+          <div class="row two">
+            <label>
+              <span>Email</span>
+              <input type="email" required placeholder="you@email.com">
+            </label>
+            <label>
+              <span>Phone</span>
+              <input type="tel" placeholder="+62">
+            </label>
+          </div>
+          <label>
+            <span>Name</span>
+            <input type="text" required placeholder="Your name">
+          </label>
+          <label class="full">
+            <span>Message</span>
+            <textarea rows="5" required placeholder="Tell us what you need..."></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary large"><i class="fas fa-paper-plane"></i> Submit</button>
+        </form>
+
+        <!-- right: newsletter/sidebar -->
+        <aside class="newsletter card dark">
+          <div class="overlay"></div>
+          <h3>Our Newsletters</h3>
+          <p>Dapatkan drop terbaru, restock alert, & style tips eksklusif.</p>
+          <form class="inline" onsubmit="event.preventDefault(); alert('Subscribed!');">
+            <input type="email" required placeholder="Email address">
+            <button class="btn btn-dark" type="submit">Subscribe</button>
+          </form>
+          <ul class="brand-row">
+            <li class="pill">Visa</li>
+            <li class="pill">Mastercard</li>
+            <li class="pill">Gopay</li>
+            <li class="pill">Dana</li>
+          </ul>
+        </aside>
+      </div>
+
+      <!-- info cards -->
+      <div class="info grid-3">
+        <article class="info-card">
+          <i class="fas fa-phone"></i>
+          <div>
+            <h4>(+62) 895-3296-51179</h4>
+            <p>Senin–Minggu, 09.00–17.00 WIB</p>
+          </div>
+        </article>
+        <article class="info-card">
+          <i class="fas fa-envelope"></i>
+          <div>
+            <h4>luxorastudioid@gmail.com</h4>
+            <p>Balasan cepat ± 1–6 jam kerja</p>
+          </div>
+        </article>
+        <article class="info-card">
+          <i class="fas fa-store"></i>
+          <div>
+            <h4>Luxora Studio</h4>
+            <p>Gading Serpong, Tangerang</p>
+          </div>
+        </article>
+      </div>
+
+      <!-- map -->
+      <div class="map card">
+        <iframe
+          title="Luxora Map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.150768987164!2d106.616287!3d-6.256870!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fbf89a2fd95b%3A0x8f501d3a9b6e0c52!2sSummarecon%20Digital%20Center%20(UMN%20Scientia%20Garden)!5e0!3m2!1sid!2sid!4v1738298900000!5m2!1sid!2sid">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- ================= FAQ ================= -->
+    <section class="faq container">
+      <header class="section-head"><h2>FAQ</h2></header>
+      <details class="card">
+        <summary>Apakah tersedia COD?</summary>
+        <p>Tersedia di kota tertentu, cek opsi saat checkout.</p>
+      </details>
+      <details class="card">
+        <summary>Estimasi pengiriman?</summary>
+        <p>Jabodetabek 1–3 hari kerja, luar pulau 3–7 hari.</p>
+      </details>
+      <details class="card">
+        <summary>Penukaran/return?</summary>
+        <p>14 hari setelah barang diterima, tag & kemasan lengkap.</p>
+      </details>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <div id="4"></div>
+  <script>
+    (function loadFooter(){
+      var r = new XMLHttpRequest();
+      r.open("GET", "footer.html", false);
+      r.send(null);
+      document.getElementById(4).innerHTML = r.responseText;
+    })();
+  </script>
+</body>
+</html>
